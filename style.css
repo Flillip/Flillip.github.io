@@ -1,0 +1,60 @@
+@font-face {
+    font-family: IBMVGA8;
+    src:url(/fonts/Web437_IBM_VGA_8x16.woff) format('woff');
+    font-weight: 400;
+    font-style:normal
+  }
+
+:root {
+    --black: #000;
+    --grey: #323232;
+    --white: #fff;
+}
+
+body {
+    background-color: var(--black);
+    font-family: IBMVGA8, monospace;
+    font-size: 16px;
+    color: var(--white);
+}
+
+.box {
+	position: relative;
+	background-color: var(--grey);
+	padding: 0 2ch 1em;
+	margin-top: .5em;
+	max-width: calc(100% - 2ch);
+}
+
+.titledbox {
+	margin: 1.5em auto 2.5em auto;
+}
+
+.box::after {
+	content: ' ';
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	width: calc(100% - 20px);
+	height: calc(100% - 13px);
+	border-top: 3px double #888;
+	border-bottom: 3px double #888;
+	border-left: 5px double #888;
+	border-right: 5px double #888;
+	z-index: 0;
+}
+
+.box::before {
+    background-color: var(--black);
+    z-index: -20;
+    position: absolute;
+    display: block;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACAQMAAABFZu8gAAAABlBMVEUAqqoAAAC9JseZAAAADElEQVQI12O4wMwBAAKCANzeIkjIAAAAAElFTkSuQmCC);
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    top: 16px;
+    left: 16px;
+    transition: all .1s ease-in-out;
+    filter: saturate(0) brightness(.42);
+}
